@@ -87,5 +87,69 @@ public class TestStack {
         // Equals 20 because Vector grows capcity in increments of 10
         Assert.assertEquals(expected, vec.capacity());
     }
-    
+    @Test
+    public void testStack(){
+        Stack<Integer> milk = new Stack<>();
+        milk.add(0, 1);
+        milk.add(1,2);
+        milk.add(2,3);
+        milk.add(3,4);
+        milk.add(4,5);
+        Integer actual = milk.peek();
+
+        Integer expected = milk.elementAt(4);
+
+        Assert.assertEquals(expected, actual);
+    }
+    @Test
+    public void testTreeMap(){
+        TreeMap<String, Integer> tree = new TreeMap<>();
+        tree.put("A", 1);
+        boolean expected = false;
+
+        Assert.assertEquals(expected, false);
+    }
+    @Test
+    public void testTreeSet(){
+        TreeSet<Integer> set = new TreeSet<>();
+        set.add(1);
+        set.add(2);
+        set.add(3);
+        set.add(4);
+        set.add(5);
+        Integer expected = 3;
+        Assert.assertEquals(expected, set.higher(2));
+    }
+
+    @Test
+    public void testIterator(){
+        ArrayList<String> list = new ArrayList<>();
+        list.add("trung");
+        list.add("lawhorn");
+        String expected = "trung";
+
+        Assert.assertEquals(expected, list.iterator().next());
+    }
+    @Test
+    public void testPriorityQueue(){
+        PriorityQueue<String> prio = new PriorityQueue<>();
+        prio.add("mario");
+        prio.add("luigi");
+        prio.add("wario");
+        prio.poll();
+
+        Assert.assertEquals(2, prio.size());
+    }
+    @Test
+    public void testComparable(){
+        ArrayList<String> arrayList = new ArrayList<>();
+        arrayList.add("j");
+        arrayList.add("k");
+        arrayList.add("l");
+
+        Integer expected = -1;
+        Integer actual = arrayList.get(0).compareTo(arrayList.get(1));
+
+        Assert.assertEquals(expected, actual);
+    }
 }
